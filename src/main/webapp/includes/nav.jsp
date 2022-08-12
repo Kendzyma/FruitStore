@@ -1,8 +1,15 @@
 <%@ page import="static java.lang.System.in" %>
+<%@ page import="model.Product" %>
+<%@ page import="java.util.List" %>
+<%@ page import="model.Cart" %>
+<%@ page import="Dao.CartDao" %>
 <%
   HttpSession session1 = request.getSession(false);
 
   String sesion = (String) session1.getAttribute("name");
+  String customerRole = (String) session1.getAttribute("customerRole");
+
+
 %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
   <div class="container">
@@ -22,31 +29,37 @@
       <div class="collapse navbar-collapse" id="navbar-menu">
       <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
       <li class="nav-item active"><a class="nav-link" href="index.jsp">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
       <li class="nav-item"><a class="nav-link" href="contact-us">contact us</a></li>
         <li class="nav-item"><a class="nav-link" href="logout">Log out</a></li>
       </ul>
       </div>
+      <%if(customerRole.equals("customer")){%>
+      <%
+      int userId = (int) session1.getAttribute("userId");
+      CartDao cart = new CartDao();
+      List<Product> carts = cart.getAllCarts(userId);
+      %>
     <div class="attr-nav">
       <ul>
         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
         <li class="side-menu">
-          <a href="#">
-            <i class="fa fa-shopping-bag"></i>
-            <span class="badge">3</span>
+          <a href="checkout">
+            <span class="badge badge-danger"><%=carts.size()%></span>
             <p>My Cart</p>
           </a>
         </li>
       </ul>
     </div>
       <%}
+    %>
+      <%}
+
       else{%>
       <div class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-        <div class="collapse navbar-collapse" id="navbar-menu">
+        <div class="collapse navbar-collapse" >
           <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
             <li class="nav-item active"><a class="nav-link" href="index.jsp">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="loginPage">Login</a></li>
             <li class="nav-item"><a class="nav-link" href="signup">Sign up</a></li>
             <li class="nav-item"><a class="nav-link" href="contact-us">contact us</a></li>
           </ul>

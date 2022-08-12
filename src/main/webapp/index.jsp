@@ -38,10 +38,11 @@
         <img src=images/<%=product.getImage()%> class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title"><%=product.getProductName()%></h5>
-            <h6 class="price">Price: $<%=product.getPrice()%></h6>
+            <h6 class="price">Price: <%=product.getPrice()%></h6>
             <h6 class="category">Category: <%=product.getCategory()%></h6>
             <div class="mt-3 d-flex justify-content-between">
                 <a href="AddToCart?id=<%=product.getProductId()%>" class="btn btn-primary">Add to Cart</a>
+                <a href="BuyNow?id=<%=product.getProductId()%>" class="btn btn-success">Buy Now</a>
             </div>
         </div>
 

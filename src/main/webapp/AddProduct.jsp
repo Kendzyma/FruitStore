@@ -1,3 +1,14 @@
+<%
+    HttpSession session2 = request.getSession(false);
+    String adminsession2 = (String) session2.getAttribute("name");
+    String adminRole2 = (String) session2.getAttribute("customerRole");
+    if(adminsession2 == null){
+        response.sendRedirect("index.jsp");
+    }
+    else if(!adminRole2.equals("Admin")){
+        response.sendRedirect("index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->

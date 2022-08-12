@@ -1,3 +1,16 @@
+<%
+    HttpSession session2 = request.getSession(false);
+    String adminsession2 = (String) session2.getAttribute("name");
+    String adminRole2 = (String) session2.getAttribute("customerRole");
+    if(adminsession2 == null){
+        response.sendRedirect("index.jsp");
+    }
+   else if(!adminRole2.equals("Admin")){
+        response.sendRedirect("index.jsp");
+    }
+%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -52,7 +65,7 @@
                         <div class="account-box">
                             <div class="service-box">
                                 <div class="service-icon">
-                                    <a href="AddProduct"> <i class="fa fa-gift"></i> </a>
+                                    <a href="AllProducts"> <i class="fa fa-gift"></i> </a>
                                 </div>
                                 <div class="service-desc">
                                     <h4>Add Products</h4>
@@ -254,8 +267,8 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
                             <h4>About Freshshop</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">

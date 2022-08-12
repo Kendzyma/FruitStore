@@ -1,52 +1,26 @@
 package model;
 
 public class Cart {
-    private int cartId;
-    private String productName;
-    private String price;
-    private String category;
-    private int productId;
+    private int proid;
+
+    private int userid;
     private int quantity;
 
 
-    public int getCartId() {
-        return cartId;
+    public int getProid() {
+        return proid;
     }
 
-    public void setCartId(int cartId) {
-        this.cartId = cartId;
+    public void setProid(int proid) {
+        this.proid = proid;
     }
 
-    public String getProductName() {
-        return productName;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     public int getQuantity() {

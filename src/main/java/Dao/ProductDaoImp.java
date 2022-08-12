@@ -62,7 +62,7 @@ public class ProductDaoImp implements ProductDao {
             preparedStatement.setString(2, product.getCategory());
             preparedStatement.setString(3, product.getPrice());
             preparedStatement.setInt(4, product.getQuantity());
-
+        
             int resultSet1 = preparedStatement.executeUpdate();
             if (resultSet1 > 0) return true;
         } catch (Exception e) {

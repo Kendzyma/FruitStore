@@ -34,7 +34,7 @@
                 <div class="col-lg-8 col-sm-12">
                     <div class="contact-form-right">
                         <h2>Register</h2>
-                        <form method="post" action="signup">
+                        <form method="post" action="signupAction">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <h1 style="color: red">${name}</h1>
+                                    <h1 style="color: green">${signup}</h1>
                                 </div>
                                 </div>
                         </form>
